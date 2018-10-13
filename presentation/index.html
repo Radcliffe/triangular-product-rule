@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>A Product Rule for Triangular Numbers</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <link rel="stylesheet" href="css/styles.css"
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <h2>A product rule for triangular numbers</h2>
+          <p>David Radcliffe</p>
+          <p class="small">dradcliffe@gmail.com</p>
+          <p><img src="images/MAA_logo_PMS286.jpg" height="118"></p>
+          <p class="small">MAA North Central Section Fall 2018 Meeting</p>
+          <p class="small">October 13, 2018</p>
+        </section>
+				<section>
+          <h3>Triangular numbers</h3>
+          <p>
+            <img src="images/500px-First_six_triangular_numbers.svg.png" style="background-color:#fff;">
+          </p>
+          <p>\(T(n) = \frac12 n(n+1) \)</p>
+        </section>
+        <section>
+          <h3>The product rule for triangular numbers</h3>
+          <p>
+            \(T(mn) = T(m)T(n) + T(m-1)T(n-1) \)
+          </p>
+          <p>
+            <img src="images/20th-triangular-number.png" height="300">
+          </p>
+          <p>
+            \(T(20) = T(5)T(4) + T(4)T(3) \)
+          </p>
+        </section>
+        <section>
+          What other sequences satisfy the product rule?
+        </section>
+        <section>
+          <h3>Our Main Result</h3>
+          <section>
+          <ul style="list-style: none;">
+            <li>Let \(K\) be a field of characteristic zero.</li>
+            <li>Let \(T : \mathbb{N}_0 \to K\) be a function satisfying
+            \[T(mn) = T(m)T(n) + T(m-1)T(n-1)\] for all \(m, n \ge 1\).</li>
+            <li>Then \(T\) must be one of the following five sequences:</li>
+          </ul>
+        </section>
+          <section>
+            <p>\(T\) must be one of the following five sequences:</p>
+            <ul>
+              <li>\((0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, \ldots)\)</li>
+              <li>\((1/2, 1/2, 1/2, 1/2, 1/2, 1/2, \ldots)\)</li>
+              <li>\((0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, \ldots)\)</li>
+              <li>\((0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, \ldots)\)</li>
+              <li>\((0, 1, 3, 6, 10, 15, 21, 36, 45, \ldots)\)</li>
+            </ul>
+            <p class="fragment">Conversely, each of these sequences satisfies
+              the product rule for triangular numbers.</p>
+          </section>
+        </section>
+        <section>
+          <h3>A generalized product rule</h3>
+          <section>
+          <p>What sequences satisfy</p>
+          <p> \[T(mn) = aT(m)T(n) + bT(m-1)T(n-1)\]</p>
+        <p>for all \(m, n \ge 1\)?</p>
+          <p>(\(a\) and \(b\) are constants.)</p>
+          </section>
+          <section>
+            <p>\[T(mn) = aT(m)T(n) + bT(m-1)T(n-1)\]</p>
+            <p>The only solutions are...</p>
+            <ul>
+              <li>The five sequences listed previously.</li>
+              <li>Completely multiplicative sequences.
+                \[T(mn) = T(m)T(n);\quad m,n\in \mathbb{N}\]
+              </li>
+              <li>All nonzero scalar multiples of the above.</li>
+              <li>That's it!</li>
+            </ul>
+          </section>
+        </section>
+        <section><h3>But how do we prove it?</h3>
+          <p><img height="320" src="images/elmo.gif"></p>
+        </section>
+        
+        <section>
+          <h3>Solving a special case</h3>
+          <section>
+            <p>Solve \(T(mn) = T(m)T(n) + zT(m-1)T(n-1)\)</p>
+            <p>where \(T(0)=0\), \(T(1)=1\), and \(z\ne 0\).</p>
+          </section>
+          <section>
+            <p>Let \(x = T(2)\) and \(y = T(3)\).</p>
+            <p class="fragment">\(T(2n) = T(2)T(n) + zT(1)T(n-1) = xT(n) + zT(n-1)\)</p>
+            <p class="fragment">\(T(4n) = T(4) T(n) + zT(3) T(n-1) = (x^2 + z) T(n) + yz T(n-1)\) </p>
+            <p class="fragment">\(T(4n) = T(2)T(2n) + zT(1)T(2n-1) = xT(2n) + zT(2n-1)\)</p>
+            <br>
+            <p class="fragment">Combine these equations...</p>
+          </section>
+          <section>
+            <p>Combine these equations...</p>
+            <br/>
+            <p>\(T(2n) = xT(n) + zT(n-1)\) </p>
+            <p>\(T(2n-1) = T(n) + (y-x) T(n-1)\)</p>
+            <br>
+            <p>Using these recurrences, we can express all \(T(n)\) in terms of \(x, y, z\).</p>
+          </section>
+          <section>
+            <p>But we can calculate some of the terms in a different way to get different expressions in terms of \(x, y, z\).</p>
+              <br>
+            <p>\(T(9) = T(3)^2 + zT(2)^2\)</p>
+            <p>\(T(15) = T(3)T(5) + zT(2)T(4)\)</p>
+            <p>\(T(18) = T(3)T(6) + zT(2)T(5)\)</p>
+            <p>\(T(25) = T(5)^2 + zT(4)^2\)</p>
+          </section>
+          <section>
+            <p>Equating these expressions yields the following system of equations.</p>
+            <br>
+            <p>
+              \[
+                \begin{align*}
+                  0 = & \ x^3 - x^2y + x^2z + x^2 - xy + xz + y^2 - yz - y\\
+                  0 = & \ x^3z - 3x^2y + 3xy^2 + xz^2 - y^3 + y^2 - 2yz \\
+                  0 = & \ x^4 - x^3y - 2x^3z + x^3 + x^2yz - x^2y \\
+                      & \ + x^2z + xy^2 + xyz - xy - xz^2 - yz^2 \\
+                  0 = & \ x^4z + x^4 - x^3y + x^2yz - x^2y + 2x^2z^2 \\
+                      & \ + x^2z - x^2 - xy^2z + xy^2 + xy - y^2z + z^3 - z
+                \end{align*}
+              \]
+            </p>
+
+          </section>
+
+        </section>
+        <section>
+          <h3>Finding a Gröbner Basis</h3>
+          <p class="small">
+            \[
+              \begin{align*}
+              0 &= 4x^3 + 4x^2 - 8xy - y^2z + 5yz^2 + yz - z^4 - 4z^3 + z^2 + 4z \\
+              0 &= 6x^2y - 6xy - 6xz - y^3 + y^2z - 2y^2 + 2yz^2 + 4yz + 3y - 3z^3 + 3z \\
+              0 &= 12x^2z - 2y^3 + 5y^2z + 8y^2 - 11yz^2 - 7yz - 6y + 3z^4 + 6z^3 - 3z^2 - 6z \\
+              0 &= 2xy^2 - 2xy - 2xz - y^3 + y^2z + y - z^3 + z \\
+              0 &= 6xyz - y^3 + y^2z + 4y^2 - 7yz^2 - 2yz - 3y + 6z^4 + 3z^3 - 6z^2 - 3z \\
+              0 &= 6xz^2 + y^3 - 4y^2z - 4y^2 + 7yz^2 - yz + 3y - 3z^4 - 3z^3 + 3z^2 + 3z \\
+              0 &= y^4 - 4y^3 - 23y^2z + 3y^2 + 27yz^2 + 21yz - 18z^4 + 18z^2 \\
+              0 &= z(y^3 - 8y^2 + 5yz + 7y - 7z^3 + 7z) \\
+              0 &= z(y + z)(z - 1)(y - z - 1) \\
+              0 &= yz^2(z - 1) \\
+              0 &= z^3(z - 1)(z + 1)
+            \end{align*}
+            \]
+          </p>
+
+        </section>
+        <section>
+          <h3>Solving the system</h3>
+          <p>The system has the following solutions:</p>
+          <p>\(\{(-1, 0, 0), (0, 0, -1), (0, 0, 0), (0, 0, 1), (0, 1, 0), \\ (1, 1, 0), (1, 2, 1), (2, 3, 0), (3, 6, 1)\}\)</p>
+          <p class="fragment">But the solutions with $z=0$ can be eliminated...</p>
+          <p class="fragment">and the solution \((0, 0, -1)\) doesn't work.</p>
+          <p class="fragment">Therefore \((x, y, z) \in \{(0, 0, 1), (1, 2, 1), (3, 6, 1)\)</p>
+        </section>
+        <section>
+          <h3>Python code</h3>
+          <pre>
+<code>from sympy import *
+
+x, y, z = symbols('x y z')
+
+def T(n):
+    if n < 4: return [0, 1, x, y][n]
+    k = n // 2
+    if n % 2: return T(k+1) + (y - x) * T(k)
+    return x * T(k) + z * T(k - 1)
+
+eq9 = simplify(T(9) - T(3) ** 2 - z * T(2) ** 2)
+eq15 = simplify(T(15) - T(3) * T(5) - z * T(2) * T(4))
+eq18 = simplify(T(18) - T(3) * T(6) - z * T(2) * T(5))
+eq25 = simplify(T(25) - T(5) ** 2 - z * T(4) ** 2)
+system = [eq9, eq15, eq18, eq25]
+
+basis = groebner(system, [x, y, z])
+for poly in basis:
+    print(poly)
+
+solutions = solve_poly_system(system, [x, y, z])
+print(solutions)</code></pre>
+        </section>
+
+        <section><h3>Bonus: algebraic geometry</h3>
+          <img src="images/480px-Togliatti_surface.png">
+          </section>
+          <section>
+            <h3>Ideals</h3>
+            <section>
+            <ul>
+              <li>An <strong>ideal</strong> is an additive subgroup of a ring \(R\)
+                which is closed under multiplication by elements of \(R\).</li>
+              <li>Two sets of polynomials have the same sets of common zeros if
+                they generate the same ideal.</li>
+              <li>A good strategy to solve a complicated system of polynomial equations
+                is to find a “nice” basis for the ideal that they generate.</li>
+              </ul>
+            </section>
+          </section>
+          <section>
+          <h4>Analogy: Linear systems</h4>
+          <section>
+          <p>Consider the system of equations:</p>
+          <p>
+            \[
+              \left\{
+                \begin{array}{rcrcrcrcr}
+                  x & - & 3y & + &   z & - &  4 & = & 0\\
+                 2x & - & 8y & + &  8z & + &  2 & = & 0 \\
+                -6x & + & 3y & - & 15z & - &  9 & = & 0
+                \end{array}
+              \right.
+            \]
+          </p>
+          <p>Not so easy to solve?</p>
+        </section>
+        <section>
+          <p>But an upper-triangular system is easy to solve.</p>
+          <p>\[
+            \left\{
+              \begin{array}{rcrcrcrcr}
+                x & - & 3y & + &    z & - &  4 & = & 0\\
+                  &   & 2y & + &   6z & + &  5 & = & 0\\
+                  &   &    &   & -18z & - & 36 & = & 0
+              \end{array}
+            \right.
+          \]</p>
+         <p>We use Gaussian elimination to convert the original system
+           into an equivalent system of equations.</p>
+         <p>The new equations are linear combinations of the original equations.</p>
+  
+        </section>
+        </section>
+          <section>
+            <h3>Gröbner Bases</h3>
+            <ul>
+          <li>A Gröbner basis for an ideal \(I\) is a finite collection of
+            polynomials \(G = \{g_1, \ldots, g_n\} \subset I\) with the property that
+            for every nonzero \(f \in I\), the leading term of \(f\) is divisible
+            by the leading term of \(g_i\) for some \(i\).</li>
+          <li>The Gröbner basis depends on a term ordering.
+          <li>Buchberger's algorithm takes any arbitrary generating set for a ideal
+            and produces a Gröbner basis from it.</li>
+          </ul>
+  
+          </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		      { src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
