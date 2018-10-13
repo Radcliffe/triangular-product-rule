@@ -32,6 +32,7 @@
           <p><img src="images/MAA_logo_PMS286.jpg" height="118"></p>
           <p class="small">MAA North Central Section Fall 2018 Meeting</p>
           <p class="small">October 13, 2018</p>
+          <p class="small"><a href="http://tinyurl.com/prod-triangle">tinyurl.com/prod-triangle</a></p>
         </section>
 				<section>
           <h3>Triangular numbers</h3>
@@ -43,12 +44,12 @@
         <section>
           <h3>The product rule for triangular numbers</h3>
           <p>
-            \(T(mn) = T(m)T(n) + T(m-1)T(n-1) \)
-          </p>
-          <p>
             <img src="images/20th-triangular-number.png" height="300">
           </p>
-          <p>
+          <p class="fragment">
+            \(T(mn) = T(m)T(n) + T(m-1)T(n-1) \)
+          </p>
+          <p class="fragment">
             \(T(20) = T(5)T(4) + T(4)T(3) \)
           </p>
         </section>
@@ -56,14 +57,12 @@
           What other sequences satisfy the product rule?
         </section>
         <section>
-          <h3>Our Main Result</h3>
+          <h3>Main Result</h3>
           <section>
-          <ul style="list-style: none;">
-            <li>Let \(K\) be a field of characteristic zero.</li>
-            <li>Let \(T : \mathbb{N}_0 \to K\) be a function satisfying
-            \[T(mn) = T(m)T(n) + T(m-1)T(n-1)\] for all \(m, n \ge 1\).</li>
-            <li>Then \(T\) must be one of the following five sequences:</li>
-          </ul>
+            <p>Let \(K\) be a field of characteristic zero.</p>
+            <p>Let \(T : \mathbb{N}_0 \to K\) be a function satisfying
+            \[T(mn) = T(m)T(n) + T(m-1)T(n-1)\] for all \(m, n \ge 1\).</p>
+            <p>Then \(T\) must be one of the following five sequences:</p>
         </section>
           <section>
             <p>\(T\) must be one of the following five sequences:</p>
@@ -102,7 +101,7 @@
         <section><h3>But how do we prove it?</h3>
           <p><img height="320" src="images/elmo.gif"></p>
         </section>
-        
+
         <section>
           <h3>Solving a special case</h3>
           <section>
@@ -255,7 +254,7 @@ print(solutions)</code></pre>
          <p>We use Gaussian elimination to convert the original system
            into an equivalent system of equations.</p>
          <p>The new equations are linear combinations of the original equations.</p>
-  
+
         </section>
         </section>
           <section>
@@ -269,7 +268,7 @@ print(solutions)</code></pre>
           <li>Buchberger's algorithm takes any arbitrary generating set for a ideal
             and produces a Gröbner basis from it.</li>
           </ul>
-  
+
           </section>
 			</div>
 		</div>
