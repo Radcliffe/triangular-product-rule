@@ -6,3 +6,7 @@
 p.small {
   font-size: 24px;
 }
+
+p.medium {
+  font-size: 30px;
+}

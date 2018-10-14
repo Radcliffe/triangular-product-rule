@@ -37,9 +37,13 @@
 				<section>
           <h3>Triangular numbers</h3>
           <p>
-            <img src="images/500px-First_six_triangular_numbers.svg.png" style="background-color:#fff;">
+            <img src="images/500px-First_six_triangular_numbers.svg.png" height=250 style="background-color:#fff;">
           </p>
-          <p>\(T(n) = \frac12 n(n+1) \)</p>
+          <p class="medium">\[
+            \begin{align*}
+            T(n) & = 1 + 2 + 3 + \cdots + n \\
+                 & = \frac12 n(n+1).
+            \end{align*} \]</p>
         </section>
         <section>
           <h3>The product rule for triangular numbers</h3>
@@ -47,10 +51,10 @@
             <img src="images/20th-triangular-number.png" height="300">
           </p>
           <p class="fragment">
-            \(T(mn) = T(m)T(n) + T(m-1)T(n-1) \)
+            \(T(mn) = \color{red} {T(m)T(n)} + T(m-1)T(n-1) \)
           </p>
           <p class="fragment">
-            \(T(20) = T(5)T(4) + T(4)T(3) \)
+            \(T(20) = \color{red} {T(5)T(4)} + T(4)T(3) \)
           </p>
         </section>
         <section>
@@ -110,9 +114,15 @@
           </section>
           <section>
             <p>Let \(x = T(2)\) and \(y = T(3)\).</p>
-            <p class="fragment">\(T(2n) = T(2)T(n) + zT(1)T(n-1) = xT(n) + zT(n-1)\)</p>
-            <p class="fragment">\(T(4n) = T(4) T(n) + zT(3) T(n-1) = (x^2 + z) T(n) + yz T(n-1)\) </p>
-            <p class="fragment">\(T(4n) = T(2)T(2n) + zT(1)T(2n-1) = xT(2n) + zT(2n-1)\)</p>
+            <p class="fragment">\[
+              \begin{align*}
+                T(2n) & = T(2)T(n) + zT(1)T(n-1) \\
+                      & = xT(n) + zT(n-1) \\
+                T(4n) & = T(4) T(n) + zT(3) T(n-1) \\
+                      & = (x^2 + z) T(n) + yz T(n-1) \\
+                T(4n) & = T(2)T(2n) + zT(1)T(2n-1) \\
+                      & = xT(2n) + zT(2n-1)
+              \end{align*}\]</p>
             <br>
             <p class="fragment">Combine these equations...</p>
           </section>
@@ -135,7 +145,7 @@
           <section>
             <p>Equating these expressions yields the following system of equations.</p>
             <br>
-            <p>
+            <p class="medium">
               \[
                 \begin{align*}
                   0 = & \ x^3 - x^2y + x^2z + x^2 - xy + xz + y^2 - yz - y\\
@@ -175,10 +185,12 @@
         <section>
           <h3>Solving the system</h3>
           <p>The system has the following solutions:</p>
-          <p>\(\{(-1, 0, 0), (0, 0, -1), (0, 0, 0), (0, 0, 1), (0, 1, 0), \\ (1, 1, 0), (1, 2, 1), (2, 3, 0), (3, 6, 1)\}\)</p>
+          <p>\(\{(-1, 0, 0), (0, 0, -1), (0, 0, 0), \\
+                 (0, 0, 1), (0, 1, 0),  (1, 1, 0), \\
+                 (1, 2, 1), (2, 3, 0), (3, 6, 1)\}.\)</p>
           <p class="fragment">But the solutions with $z=0$ can be eliminated...</p>
           <p class="fragment">and the solution \((0, 0, -1)\) doesn't work.</p>
-          <p class="fragment">Therefore \((x, y, z) \in \{(0, 0, 1), (1, 2, 1), (3, 6, 1)\)</p>
+          <p class="fragment">Therefore \((x, y, z) \in \{(0, 0, 1), (1, 2, 1), (3, 6, 1)\}.\)</p>
         </section>
         <section>
           <h3>Python code</h3>
@@ -286,7 +298,8 @@ print(solutions)</code></pre>
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		      { src: 'plugin/math/math.js', async: true }
+		      { src: 'plugin/math/math.js', async: true },
+          { src: 'plugin/color/color.js', async: true }
 				]
 			});
 		</script>
